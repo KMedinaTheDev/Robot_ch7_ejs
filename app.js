@@ -1,3 +1,4 @@
+// notes:
 // 1. build an automaton that picks up and drops off parcels
 
 // Meadowfield consist of 11 places w/ 14 roads
@@ -45,8 +46,7 @@
   // my graph database is returned
 //   return graph;
 // }
-// 2nd global
-// var roadGraph = buildGraph(roads);
+
 
 // the code:
 // 1st global
@@ -195,8 +195,12 @@ function goalOrientedRobot({place, parcels}, route) {
 
 runRobot(VillageState.random(),  goalOrientedRobot, []);
 
+
+
 // Part 2:
 function lazyRobot({place, parcels}, route) {
+
+
   if (route.length == 0) {
     // Describe a route for every parcel
     let routes = parcels.map(parcel => {
@@ -220,5 +224,3 @@ function lazyRobot({place, parcels}, route) {
 
   return {direction: route[0], memory: route.slice(1)};
 }
-
-runRobotAnimation(VillageState.random(), lazyRobot, []);
